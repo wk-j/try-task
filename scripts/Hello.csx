@@ -1,6 +1,8 @@
 #! "netcoreapp2.1"
 #r "../src/TryTask/obj/Debug/netstandard2.0/TryTask.dll"
 
+using XXX;
+
 Option<int> devide(int top, int bottom) {
     if (bottom == 0) {
         return None<int>.Value;
@@ -15,5 +17,14 @@ async Option<int> start() {
     return v3;
 }
 
-var rs = start().GetAwaiter().GetResult();
+var rs = start();
+
+switch (rs) {
+    case Some<int> s:
+        Console.WriteLine($"Some {s.Item}");
+        break;
+    case None<int> s:
+        Console.WriteLine($"None");
+        break;
+}
 
