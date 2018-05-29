@@ -1,7 +1,7 @@
 #! "netcoreapp2.1"
 #r "../src/TryTask/obj/Debug/netstandard2.0/TryTask.dll"
 
-using XXX;
+using TryTask.Maybe;
 
 Option<int> devide(int top, int bottom) {
     if (bottom == 0) {
